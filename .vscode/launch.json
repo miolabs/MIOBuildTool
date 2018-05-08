@@ -15,7 +15,8 @@
         "sourceMaps": true,
         "args": [
             //"create", "view", "helloView"
-            "init", "app-name", // new app called app-name
+            //"init", "app-name", // new app called app-name
+            "init", "app-name", "-f" // new app called app-name even if the app-name named folder exists.
         ],
         "sourceMapPathOverrides": {
             "webpack:///./~/*": "${workspaceRoot}/node_modules/*",

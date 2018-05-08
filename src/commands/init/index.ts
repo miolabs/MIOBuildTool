@@ -11,6 +11,7 @@
 
 import { assets } from "../../utils/ProjectHandler";
 import { FolderHandler } from "./FolderHandler";
+import * as fs from "fs-extra";
 
 export function Init(name: string, args: any) {
     const folder = new FolderHandler(assets.initDefault, name);
@@ -18,7 +19,13 @@ export function Init(name: string, args: any) {
       .checkExistence()
       .then((pathExists: boolean) => {
         if (pathExists) {
-            throw new Error(`Folder already exists in the selected path: ${folder.resultFolderName}.`);
+            if (args.force) {
+                return fs
+                    .remove(folder.resultFolderName)
+                    .then(() => folder.build());
+            } else {
+                throw new Error(`Folder already exists in the selected path: ${folder.resultFolderName}.`);
+            }
         } else {
             return folder.build();
         }
