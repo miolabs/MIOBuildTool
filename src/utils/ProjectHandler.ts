@@ -1,5 +1,9 @@
 import { camelToSnake } from "./stringutils";
+import * as path from "path";
 
+/**
+ * These assets refer to the files that are necessary for the tool to work in this repository.
+ */
 export const assets = {
     compVcDefault: {
         path: "components/controller/vc.default.hbs",
@@ -11,10 +15,22 @@ export const assets = {
     viewHtmlDefault: {path: "components/view/html.default.hbs", variableNames: ["containerId", "customStyleFile"]},
     viewHtmlNoCustomStyle: {path: "components/view/html.nocustomstyle.hbs", variableNames: ["containerId"]},
     viewScssDefault: {path: "components/view/scss.default.hbs", variableNames: ["containerId"]},
+    assetsFolder: "templates",
 };
 
+/**
+ * Get the asset from the assets directory.
+ *
+ * @param assetPath Asset relative to the assets directory.
+ */
+export function getAsset(assetPath: string) {
+    return path.resolve(__dirname, "..", assets.assetsFolder, assetPath);
+}
+
+/**
+ * These config files refer to the defaults for project-related data.
+ */
 export const config = {
-    assetsFolder: "templates",
     cssDir: "app/layout",
     htmlDir: "app/layout",
     tsDir: "sources",

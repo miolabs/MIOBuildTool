@@ -1,16 +1,7 @@
 import * as fs from "fs-extra";
 import * as path from "path";
 import { IAssetData } from "../../interfaces/IAssetData";
-import {config} from "../../utils/ProjectHandler";
-
-/**
- * Get the asset from the assets directory.
- *
- * @param assetPath Asset relative to the assets directory.
- */
-function getAsset(assetPath: string) {
-    return path.resolve(__dirname, "..", config.assetsFolder, assetPath);
-}
+import { getAsset } from "../../utils/ProjectHandler";
 
 /**
  * Build the result relative the directory that the program has been called.

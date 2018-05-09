@@ -2,11 +2,8 @@ import * as fs from "fs-extra";
 import Handlebars from "handlebars";
 import * as path from "path";
 import { ITemplateData } from "../../interfaces/ITemplateData";
-import { config } from "../../utils/ProjectHandler";
+import { getAsset } from "../../utils/ProjectHandler";
 
-function getAsset(assetPath: string) {
-    return path.resolve(__dirname, "..", config.assetsFolder, assetPath);
-}
 export class TemplateHandler {
     constructor(
         public data: ITemplateData,
