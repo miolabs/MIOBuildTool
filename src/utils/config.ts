@@ -1,81 +1,62 @@
 "use strict";
 
+/**
+ * Get the config files based on https://github.com/3rd-Eden/find-package-json. MIT.
+ */
+
 import * as path from "path";
 import * as fs from "fs-extra";
+import { config } from "./ProjectHandler";
 
 /**
  * Attempt to somewhat safely parse the JSON.
  *
  * @param data JSON blob that needs to be parsed.
- * @returns Parsed JSON or false.
+ * @returns Parsed JSON or empty object.
  * @api private
  */
-function parse(data: any): any|false {
+function parse(data: any): any {
     data = data.toString("utf-8");
 
-    //
-    // Remove a possible UTF-8 BOM (byte order marker) as this can lead to parse
-    // values when passed in to the JSON.parse.
-    //
     if (data.charCodeAt(0) === 0xFEFF) {
+        /* Remove a possible UTF-8 BOM (byte order marker) as
+           this can lead to parse values when passed in to the JSON.parse. */
         data = data.slice(1);
     }
 
     try {
         return JSON.parse(data);
     } catch (e) {
-        return false;
+        console.error("Config JSON file found, but it can not be parsed. Continue with empty config.");
+        return {};
     }
 }
 
 /**
- * Find mioconfig.json files.
- *
- * @param root The root directory we should start searching in.
- * @returns Iterator interface.
+ * Find mioconfig.json files. Blocking recursive search.
  * @api public
  */
-export function find(root: string|any): any {
-    root = root || process.cwd();
-    if (typeof root !== "string") {
-        if (typeof root === "object" && typeof root.filename === "string") {
-            root = root.filename;
+export function getConfig(): any {
+    let root = process.cwd();
+
+    /**
+     * Return the parsed mioconfig.json that we find in a parent folder.
+     *
+     * @returns config value plus __filepath attribute for the config file location.
+     */
+    function next(): any {
+        if (root.match(/^(\w:\\|\/)$/)) {
+            return {}; // return empty object if it can not find the config file.
+        }
+        const file = path.join(root, config.configFileName);
+        if (fs.existsSync(file)) {
+            const data = parse(fs.readFileSync(file));
+            data.__path = file;
+            return data;
         } else {
-            throw new Error("Must pass a filename string or a module object to finder");
+            root = path.resolve(root, "..");
+            return next();
         }
     }
-    return {
-        /**
-         * Return the parsed mioconfig.json that we find in a parent folder.
-         *
-         * @returns Value, filename and indication if the iteration is done.
-         * @api public
-         */
-        next: function next(): any {
-            if (root.match(/^(\w:\\|\/)$/)) {
-                return {
-                    value: undefined,
-                    filename: undefined,
-                    done: true,
-                };
-            }
-
-            const file = path.join(root, "mioconfig.json");
-            let data = null;
-
-            root = path.resolve(root, "..");
-
-            if (fs.existsSync(file) && (data = parse(fs.readFileSync(file)))) {
-                data.__path = file;
-
-                return {
-                    value: data,
-                    filename: file,
-                    done: false,
-                };
-            }
-
-            return next();
-        },
-    };
+    return next();
 }

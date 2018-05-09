@@ -18,6 +18,7 @@ export const config = {
     cssDir: "app/layout",
     htmlDir: "app/layout",
     tsDir: "sources",
+    configFileName: "mioconfig.json",
 };
 
 export class ProjectHandler {

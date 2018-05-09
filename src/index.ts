@@ -2,6 +2,9 @@ import * as program from "commander";
 import { Create } from "./commands/create";
 import { Init } from "./commands/init";
 import { cleanArgs } from "./utils/arguments";
+import { getConfig } from "./utils/config";
+
+const config = getConfig();
 
 program
   .usage("<command> [options]");
