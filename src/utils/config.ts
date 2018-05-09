@@ -37,7 +37,7 @@ function parse(data: any): any {
  * @api public
  */
 export function getConfig(): any {
-    let root = process.cwd();
+    let currentDir = process.cwd();
 
     /**
      * Return the parsed mioconfig.json that we find in a parent folder.
@@ -45,16 +45,16 @@ export function getConfig(): any {
      * @returns config value plus __filepath attribute for the config file location.
      */
     function next(): any {
-        if (root.match(/^(\w:\\|\/)$/)) {
+        if (currentDir.match(/^(\w:\\|\/)$/)) {
             return {}; // return empty object if it can not find the config file.
         }
-        const file = path.join(root, config.configFileName);
-        if (fs.existsSync(file)) {
-            const data = parse(fs.readFileSync(file));
-            data.__path = file;
+        const filePath = path.join(currentDir, config.configFileName);
+        if (fs.existsSync(filePath)) {
+            const data = parse(fs.readFileSync(filePath));
+            data.__path = filePath;
             return data;
         } else {
-            root = path.resolve(root, "..");
+            currentDir = path.resolve(currentDir, "..");
             return next();
         }
     }
