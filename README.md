@@ -1,6 +1,6 @@
 # miojs-cli
 
-This is a cli tool to generate projects for [MIOJSLibs](https://github.com/miolabs/MIOJSLibs).
+This is a cli tool to generate projects for [MIOJSLibs](https://github.com/miolabs/MIOJSLibs)
 
 * [Usage](#usage)
 * [Commands](#commands)
