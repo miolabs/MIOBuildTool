@@ -23,11 +23,11 @@
 * [dev]
   * combine the others
 
-[init]: docs/init.md
-[create]: docs/create.md
-[build]: docs/build.md
-[pack]: docs/pack.md
-[test]: docs/test.md
-[serve]: docs/serve.md
-[lint]: docs/lint.md
-[dev]: docs/dev.md
+[init]: commands/init.md
+[create]: commands/create.md
+[build]: commands/build.md
+[pack]: commands/pack.md
+[test]: commands/test.md
+[serve]: commands/serve.md
+[lint]: commands/lint.md
+[dev]: commands/dev.md
