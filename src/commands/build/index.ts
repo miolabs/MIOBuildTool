@@ -27,7 +27,7 @@ export function Build(args: any) {
         const distFolder = path.join(".", projectConfig.distFolder);
         // currently it assumes that the resource folder and the typescript generation folder are the same.
         const resources = path.join(".", targetDir);
-        const libsSource = path.join("node_modules", "miojslibs", "dist", "js"); // miojslibs from node
+        const libsSource = path.join("node_modules", "miojslibs", "dist", "js"); // miojslibs from npm
         const libsTarget = path.join(distFolder, "libs", "miojslibs");
         return Promise.all([
           fs.copySync(resources, distFolder, { filter: (src, dest) => {
