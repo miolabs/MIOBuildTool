@@ -1,5 +1,8 @@
 # Commands
 
+> here you can read the planned functionality,
+> for the actual implementation info, follow the link to the detailed command docs.
+
 * [init] - create a new project from a template
   * the templates are located in the repository.
 * [create] - create a file from blueprint
@@ -19,9 +22,6 @@
   * generate the lint configs
 * [dev]
   * combine the others
-
-> here you can read the planned functionality,
-> for the actual implementation info, follow the link to the command docs.
 
 [init]: docs/init.md
 [create]: docs/create.md
