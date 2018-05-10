@@ -1,6 +1,6 @@
 import { IAssetData } from "../../../interfaces/IAssetData";
 import { ITemplateData } from "../../../interfaces/ITemplateData";
-import { config, ProjectHandler } from "../../../utils/ProjectHandler";
+import { projectConfig, ProjectHandler } from "../../../utils/ProjectHandler";
 import { capitalizeFirstLetter } from "../../../utils/stringutils";
 import * as path from "path";
 
@@ -21,7 +21,7 @@ export function genStyleFileName(name: string, extension: string= "css") {
 }
 
 export function genStyleFilePath(name: string) {
-    return path.join(config.cssDir, name);
+    return path.join(projectConfig.cssDir, name);
 }
 
 export class StyleTemplate {

@@ -6,15 +6,16 @@
 
 import * as path from "path";
 import * as fs from "fs-extra";
-import { config as projectConfig } from "./ProjectHandler";
+import { projectConfig } from "./ProjectHandler";
 
 /**
  * Find project config file. Singleton. Blocking recursive search.
  * @api public
  */
-export function getConfig(): any {
+export function getConfig(fileName?: string): any {
     let currentDir = process.cwd();
-    let config = null;
+    const configFileName = fileName || projectConfig.configFileName;
+    const config = {};
 
     /**
      * Return the parsed project config that we find in a parent folder.
@@ -24,15 +25,16 @@ export function getConfig(): any {
      */
     function next(): any {
         if (currentDir.match(/^(\w:\\|\/)$/)) {
-            config = {};
+            config[configFileName] = {};
             return {}; // return empty object if it can not find the config file.
         }
-        const filePath = path.join(currentDir, config.configFileName);
+        const filePath = path.join(currentDir, configFileName);
         if (fs.existsSync(filePath)) {
             const data = parse(fs.readFileSync(filePath));
             data.__path = filePath;
-            config = data;
-            return config;
+            data.__base = path.basename(filePath);
+            config[configFileName] = data;
+            return config[configFileName];
         } else {
             currentDir = path.resolve(currentDir, "..");
             return next();
@@ -59,10 +61,10 @@ export function getConfig(): any {
             return JSON.parse(data);
         } catch (e) {
             console.error("Config JSON file found, but it can not be parsed. Continue with empty config.");
-            config = {};
-            return config;
+            config[configFileName] = {};
+            return {};
         }
     }
 
-    return (config) ? config : next();
+    return (config[configFileName]) ? config[configFileName] : next();
 }
