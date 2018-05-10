@@ -12,4 +12,4 @@ This is a cli tool to generate projects for [MIOJSLibs](https://github.com/miola
 
 ## Plans
 
-[Plan docs](./plan.md)
+[Plan docs](./plans.md)

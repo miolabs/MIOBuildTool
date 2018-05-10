@@ -3,9 +3,7 @@
 This is a cli tool to generate projects for [MIOJSLibs](https://github.com/miolabs/MIOJSLibs)
 
 * [Usage](#usage)
-* [Commands](#commands)
-* [Development](#development)
-* [Plans](#plans)
+* [Docs](#docs)
 
 ## Usage
 
@@ -14,14 +12,8 @@ npm install miojs -g
 miojs -h
 ```
 
-## Commands
+## Docs
 
-[Commands](./docs/commands.md)
+The documentation for this project is available in the [repository](./docs/README.md).
 
-## Development
-
-[Development docs](./docs/development.md)
-
-## Plans
-
-[Plan docs](./docs/plan.md)
+Also hosted in github pages at: [https://miolabs.github.io/MIOBuildTool](https://miolabs.github.io/MIOBuildTool)
