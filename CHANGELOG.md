@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Changelog
 * Prod build
 * Mioconfig file search.
+* Build command
 
 [Unreleased]: https://github.com/miolabs/miojs-cli/compare/v1.0.0...HEAD
 [0.0.2]:  https://github.com/miolabs/miojs-cli/compare/v0.0.1...v0.0.2

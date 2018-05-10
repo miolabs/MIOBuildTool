@@ -7,16 +7,17 @@
         "name": "Debug cli",
         "type": "node",
         "request": "launch",
-        "cwd": "${workspaceRoot}/sandbox",
+        "cwd": "${workspaceRoot}/sandbox/app-name",
         "program": "${workspaceRoot}/src/index.ts",
         "outFiles": [
             "${workspaceRoot}/dist/index.js"
         ],
         "sourceMaps": true,
         "args": [
+            "build"
             //"create", "view", "helloView"
             //"init", "app-name", // new app called app-name
-            "init", "app-name", "-f" // new app called app-name even if the app-name named folder exists.
+            //"init", "app-name", "-f" // new app called app-name even if the app-name named folder exists.
         ],
         "sourceMapPathOverrides": {
             "webpack:///./~/*": "${workspaceRoot}/node_modules/*",

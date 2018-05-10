@@ -3,6 +3,7 @@ import { Create } from "./commands/create";
 import { Init } from "./commands/init";
 import { cleanArgs } from "./utils/arguments";
 import { getConfig } from "./utils/config";
+import { Build } from "./commands/build";
 
 const config = getConfig();
 
@@ -22,6 +23,13 @@ program
   .description("create a new component\n\n  type: (view | ctr)\n  name: string")
   .action((type, name, cmd) => {
     Create(cmd, type, name);
+  });
+
+program
+  .command("build")
+  .description("build the project")
+  .action((type, name, cmd) => {
+    Build({});
   });
 
 program.commands.forEach((c) => c.on("--help", () => console.log()));
