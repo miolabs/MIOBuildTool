@@ -1,7 +1,7 @@
 {
   "name": "miojs",
   "version": "1.0.5",
-  "description": "",
+  "description": "This is a cli tool to generate projects for MIOJSLibs.",
   "main": "index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -26,9 +26,9 @@
   "author": "Mátyás Budavári <budavariam@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://bitbucket.org/mbudavari/miojs/issues"
+    "url": "https://github.com/miolabs/MIOBuildTool/issues"
   },
-  "homepage": "https://bitbucket.org/mbudavari/miojs/wiki/Home",
+  "homepage": "https://miolabs.github.io/MIOBuildTool/",
   "dependencies": {
     "@types/fs-extra": "^5.0.1",
     "@types/node": "^9.6.2",
