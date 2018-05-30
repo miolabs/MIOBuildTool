@@ -11,7 +11,3 @@
 * The build tool has to read configurations from a config file
   * server data: port, sourcefolder
   * linter, if different from the original.
-
-## Plan to the future
-
-* Rewrite everything to swift.

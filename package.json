@@ -1,5 +1,5 @@
 {
-  "name": "miojs-cli",
+  "name": "miojs",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://mbudavari@bitbucket.org/mbudavari/miojs.git"
+    "url": "https://github.com/miolabs/MIOBuildTool"
   },
   "keywords": [
     "demo",

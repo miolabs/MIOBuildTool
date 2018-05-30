@@ -1,4 +1,4 @@
-# miojs-cli
+# miojs-tool
 
 This is a cli tool to generate projects for [MIOJSLibs](https://github.com/miolabs/MIOJSLibs)
 
