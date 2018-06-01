@@ -1,36 +1,36 @@
 import * as fs from "fs-extra";
 import * as path from "path";
-import { IAssetData } from "../../interfaces/IAssetData";
-import { getAsset } from "../../utils/ProjectHandler";
+import { IAssetData } from "../interfaces/IAssetData";
+import { getAsset } from "./ProjectHandler";
 
 /**
  * Build the result relative the directory that the program has been called.
  *
- * @param targetPath Path relative to the curret directory.
+ * @param targetPath Path relative to the current directory of the command line utility installation folder.
  */
 function getTarget(targetPath: string) {
     return path.resolve(".", targetPath);
 }
-export class FolderHandler {
+export class CopyHandler {
     /**
      * Path for the template directory in this project.
      */
-    private templateFolderPath = "";
+    private templatePath = "";
 
     constructor(
         assetData: IAssetData,
-        public resultFolderName: string,
+        public resultName: string,
     ) {
-        this.templateFolderPath = getAsset(assetData.path);
-        this.resultFolderName = getTarget(resultFolderName);
+        this.templatePath = getAsset(assetData.path);
+        this.resultName = getTarget(resultName);
     }
     /**
-     * Check if the folder exists that is about to be created.
+     * Check if the path exists that is about to be created.
      *
      * @returns Promise<boolean> true if it already exists.
      */
     public checkExistence(): Promise<boolean> {
-        return fs.pathExists(this.resultFolderName);
+        return fs.pathExists(this.resultName);
     }
     /**
      * Copies the proper assets to the defined place
@@ -38,6 +38,6 @@ export class FolderHandler {
      * @returns Promise<void>
      */
     public build(): Promise<void> {
-        return fs.copy(this.templateFolderPath, this.resultFolderName);
+        return fs.copy(this.templatePath, this.resultName);
     }
 }

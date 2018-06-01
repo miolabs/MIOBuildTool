@@ -1,9 +1,10 @@
 import * as program from "commander";
+import { Build } from "./commands/build";
 import { Create } from "./commands/create";
+import { Data } from "./commands/data";
 import { Init } from "./commands/init";
 import { cleanArgs } from "./utils/arguments";
 import { getConfig } from "./utils/config";
-import { Build } from "./commands/build";
 import { ErrorMessage } from "./utils/error";
 
 const config = getConfig();

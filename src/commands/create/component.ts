@@ -1,5 +1,5 @@
-import { assets } from "../../utils/ProjectHandler";
-import { TemplateHandler } from "./TemplateHandler";
+import { assets } from "../../utils/projectHandler";
+import { TemplateHandler } from "../../utils/templateHandler";
 import { ControllerTemplate } from "./templates/ControllerTemplate";
 import { StyleTemplate } from "./templates/StyleTemplate";
 import { ViewTemplate } from "./templates/ViewTemplate";

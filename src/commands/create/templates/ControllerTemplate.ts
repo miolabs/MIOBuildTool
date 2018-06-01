@@ -1,10 +1,10 @@
 
+import * as path from "path";
 import { IAssetData } from "../../../interfaces/IAssetData";
 import { ITemplateData } from "../../../interfaces/ITemplateData";
-import { projectConfig } from "../../../utils/ProjectHandler";
+import { projectConfig } from "../../../utils/projectHandler";
 import { camelToSnake, capitalizeFirstLetter, uncapitalizeFirstLetter } from "../../../utils/stringutils";
 import { ViewTemplate } from "./ViewTemplate";
-import * as path from "path";
 
 export function genContainerIdFromName(name: string) {
     return camelToSnake(name).toLowerCase();

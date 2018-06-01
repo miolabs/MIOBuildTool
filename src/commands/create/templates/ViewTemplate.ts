@@ -1,6 +1,6 @@
 import { IAssetData } from "../../../interfaces/IAssetData";
 import { ITemplateData } from "../../../interfaces/ITemplateData";
-import { ProjectHandler, projectConfig } from "../../../utils/ProjectHandler";
+import { ProjectHandler, projectConfig } from "../../../utils/projectHandler";
 import { capitalizeFirstLetter } from "../../../utils/stringutils";
 import { StyleTemplate } from "./StyleTemplate";
 import * as path from "path";
