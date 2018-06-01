@@ -1,5 +1,3 @@
-import * as path from "path";
-import { camelToSnake } from "./stringutils";
 import { IAssetData } from "../interfaces/IAssetData";
 
 /**
@@ -47,31 +45,3 @@ export const assets: {[k in string]: IAssetData} = {
         variableNames: [],
     },
 };
-
-/**
- * Get the asset from the assets directory.
- *
- * @param assetPath Asset relative to the assets directory.
- */
-export function getAsset(assetPath: string) {
-    return path.resolve(__dirname, "..", assets.assetsFolder.path, assetPath);
-}
-
-/**
- * These config files refer to the defaults for project-related data.
- */
-export const projectConfig = {
-    cssDir: "app/layout",
-    htmlDir: "app/layout",
-    tsDir: "sources",
-    configFileName: "mioconfig.json",
-    tsconfig: "tsconfig.json",
-    distFolder: "app",
-    datamodelFolder: "model/",
-};
-
-export class ProjectHandler {
-    public static genContainerIdFromName(name: string) {
-        return camelToSnake(name).toLowerCase();
-    }
-}

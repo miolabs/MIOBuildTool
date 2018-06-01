@@ -1,0 +1,9 @@
+
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<model documentVersion='1.0'>
+   <entity name='Entity1' representedClassName='Entity1'>
+       <attribute name='name' optional='YES' attributeType='String'/>
+       <attribute name='number' optional='YES' attributeType='Number'/>
+       <relationship name='newRelationship' optional='YES' toMany='YES'/>
+   </entity>
+</model>

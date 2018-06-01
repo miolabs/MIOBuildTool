@@ -10,8 +10,8 @@
  */
 
 import * as fs from "fs-extra";
+import { assets } from "../../defaults/assetDefaults";
 import { CopyHandler } from "../../utils/copyHandler";
-import { assets } from "../../utils/projectHandler";
 
 export function Init(name: string, args: any) {
     const folder = new CopyHandler(assets.initDefault, name);

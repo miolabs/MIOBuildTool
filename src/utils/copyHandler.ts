@@ -1,7 +1,7 @@
 import * as fs from "fs-extra";
 import * as path from "path";
 import { IAssetData } from "../interfaces/IAssetData";
-import { getAsset } from "./ProjectHandler";
+import { getAsset } from "./project";
 
 /**
  * Build the result relative the directory that the program has been called.

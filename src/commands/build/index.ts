@@ -5,9 +5,9 @@
 import * as fs from "fs-extra";
 import * as path from "path";
 import * as childProcess from "promisify-child-process";
+import { projectConfig } from "../../defaults/projectDefaults";
 import { getConfig } from "../../utils/config";
 import { printLog } from "../../utils/printLog";
-import { projectConfig } from "../../utils/projectHandler";
 
 export function Build(args: any) {
     // TODO: find swift files

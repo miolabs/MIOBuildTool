@@ -1,7 +1,7 @@
 import * as fs from "fs-extra";
 import Handlebars from "handlebars";
 import { ITemplateData } from "../interfaces/ITemplateData";
-import { getAsset } from "./projectHandler";
+import { getAsset } from "./project";
 
 export class TemplateHandler {
     constructor(

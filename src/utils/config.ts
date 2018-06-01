@@ -4,9 +4,9 @@
  * Get the config files based on https://github.com/3rd-Eden/find-package-json. MIT.
  */
 
-import * as path from "path";
 import * as fs from "fs-extra";
-import { projectConfig } from "./ProjectHandler";
+import * as path from "path";
+import { projectConfig } from "../defaults/projectDefaults";
 
 /**
  * Find project config file. Singleton. Blocking recursive search.

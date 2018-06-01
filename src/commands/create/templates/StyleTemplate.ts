@@ -1,8 +1,9 @@
+import * as path from "path";
+import { projectConfig } from "../../../defaults/projectDefaults";
 import { IAssetData } from "../../../interfaces/IAssetData";
 import { ITemplateData } from "../../../interfaces/ITemplateData";
-import { projectConfig, ProjectHandler } from "../../../utils/projectHandler";
+import { ProjectHandler } from "../../../utils/project";
 import { capitalizeFirstLetter } from "../../../utils/stringutils";
-import * as path from "path";
 
 export function genStyleName(name: string) {
     name += name.slice(-4) === "View" ? "" : "View";

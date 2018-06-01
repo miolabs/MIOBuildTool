@@ -1,8 +1,8 @@
 
 import * as path from "path";
+import { projectConfig } from "../../../defaults/projectDefaults";
 import { IAssetData } from "../../../interfaces/IAssetData";
 import { ITemplateData } from "../../../interfaces/ITemplateData";
-import { projectConfig } from "../../../utils/projectHandler";
 import { camelToSnake, capitalizeFirstLetter, uncapitalizeFirstLetter } from "../../../utils/stringutils";
 import { ViewTemplate } from "./ViewTemplate";
 
