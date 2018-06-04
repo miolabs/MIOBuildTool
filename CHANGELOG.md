@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+* Datamodel generation
+
 ## [1.0.5] - 2018-05-30
 
 ### Added

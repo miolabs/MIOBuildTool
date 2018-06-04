@@ -29,21 +29,22 @@
     "url": "https://github.com/miolabs/MIOBuildTool/issues"
   },
   "homepage": "https://miolabs.github.io/MIOBuildTool/",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@types/fs-extra": "^5.0.1",
     "@types/node": "^9.6.2",
+    "@types/xml2js": "^0.4.2",
     "chalk": "^2.3.2",
     "commander": "^2.15.1",
+    "cross-env": "^5.1.4",
     "fs-extra": "^5.0.0",
     "handlebars": "^4.0.11",
     "minimist": "^1.2.0",
-    "promisify-child-process": "^1.0.6"
-  },
-  "devDependencies": {
-    "cross-env": "^5.1.4",
+    "promisify-child-process": "^1.0.6",
     "ts-loader": "^4.1.0",
     "typescript": "^2.8.1",
     "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "webpack-cli": "^2.0.14",
+    "xml2js": "^0.4.19"
   }
 }
