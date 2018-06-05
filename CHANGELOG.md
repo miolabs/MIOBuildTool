@@ -7,7 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
 * Datamodel generation
+* Default build task for VSCode
 
 ## [1.0.5] - 2018-05-30
 
