@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+* Changelog section into README
+
+### Fixed
+
+* Changelog diff url
+
 ## [1.1.0] - 2018-06-05
 
 ### Added
@@ -35,5 +43,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Build command
 
 [Unreleased]: https://github.com/miolabs/MIOBuildTool/compare/v1.1.0...HEAD
-[1.1.0]:  https://github.com/miolabs/MIOBuildTool/compare/v0.0.5...v1.1.0
+[1.1.0]:  https://github.com/miolabs/MIOBuildTool/compare/v1.0.5...v1.1.0
 [1.0.5]:  https://github.com/miolabs/MIOBuildTool/compare/v0.0.1...v1.0.5
