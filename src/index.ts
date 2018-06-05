@@ -29,7 +29,7 @@ program
 program
   .command("data")
   .description("manage datamodel, create new or generate typescript classes.\n")
-  .option("-i, --init", "Generate datamodel template")
+  .option("-i, --init", "Initialize the datamodel file with example data.")
   .option("-n, --filename", "create datamodel with custom filename. default: 'datamodel.xml'")
   .action((cmd) => {
     Data(cmd);
