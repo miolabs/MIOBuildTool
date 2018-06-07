@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "This is an example project for MIOJSLibs",
   "scripts": {
-    "update-libs": "npm install && cp -r node_modules/miojslibs/dist/js/ app/libs/miojslibs",
+    "update-libs": "npm install && mkdir -p app/libs/miojslibs && cp -r node_modules/miojslibs/dist/js/ app/libs/miojslibs",
     "start": "http-server -c-1 -p9090 app",
     "tsc": "tsc -w -p .",
     "scss": "node-sass app -o app --output-style compressed",
