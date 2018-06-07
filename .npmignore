@@ -1,7 +1,7 @@
-tsconfig.json
-src
-sandbox
-.markdownlint.json
-.vscode/
-webpack.config.js
-tslint.json
+/tsconfig.json
+/src
+/sandbox
+/.markdownlint.json
+/.vscode/
+/webpack.config.js
+/tslint.json
