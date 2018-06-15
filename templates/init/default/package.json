@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "description": "This is an example project for MIOJSLibs",
   "scripts": {
-    "update-libs": "npm install && mkdir -p app/libs/miojslibs && cp -r node_modules/miojslibs/dist/js/ app/libs/miojslibs",
-    "start": "http-server -c-1 -p9090 app",
-    "tsc": "tsc -w -p .",
+    "preupdate-libs": "npm install",
+    "update-libs": "copyfiles \"node_modules/miojslibs/dist/js/**/*\" ./app/libs/miojslibs/ --up 4",
+    "start": "concurrently \"npm run serve\" \"npm run scss:watch\" \"npm run build:watch\"",
+    "serve": "http-server -s -c-1 -p9090 app",
+    "build": "tsc --project .",
+    "build:watch": "npm run build -- --watch --preserveWatchOutput",
     "scss": "node-sass app -o app --output-style compressed",
-    "build": "tsc -p . -w",
     "scss:watch": "npm run scss && npm run scss -- -w app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +19,8 @@
     "miojslibs": "^0.9.33"
   },
   "devDependencies": {
+    "concurrently": "^3.5.1",
+    "copyfiles": "^2.0.0",
     "http-server": "^0.11.1",
     "node-sass": "^4.9.0",
     "typescript": "^2.9.1"
