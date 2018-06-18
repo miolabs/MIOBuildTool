@@ -6,7 +6,7 @@
     "preupdate-libs": "npm install",
     "update-libs": "copyfiles \"node_modules/miojslibs/dist/js/**/*\" ./app/libs/miojslibs/ --up 4",
     "start": "concurrently \"npm run serve\" \"npm run scss:watch\" \"npm run build:watch\"",
-    "serve": "http-server -s -c-1 -p9090 app",
+    "serve": "http-server -s -c-1 -p9090",
     "build": "tsc --project .",
     "build:watch": "npm run build -- --watch --preserveWatchOutput",
     "scss": "node-sass app -o app --output-style compressed",
