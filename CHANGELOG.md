@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Changed
+
+* Make the initial template (templates/init) platform independent
+
 ## [1.1.3] - 2018-06-07
 
 ### Fixed

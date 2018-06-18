@@ -10,7 +10,8 @@
     "build": "tsc --project .",
     "build:watch": "npm run build -- --watch --preserveWatchOutput",
     "scss": "node-sass app -o app --output-style compressed",
-    "scss:watch": "npm run scss && npm run scss -- -w app",
+    "prescss:watch": "npm run scss",
+    "scss:watch": "npm run scss -- -w app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
