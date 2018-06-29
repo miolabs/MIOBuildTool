@@ -9,4 +9,5 @@ export const projectConfig = {
     tsconfig: "tsconfig.json",
     distFolder: "app",
     datamodelFolder: "model/",
+    libsName: "miojslibs-core",
 };

@@ -22,6 +22,6 @@ export function Data(cmd): Promise<boolean> {
       return initDataModel(cmd, dataModelCreator);
       // TODO: save filename to project config descriptor file on successful creation.
     } else {
-      return generateModels(cmd, dataModelCreator);
+      return generateModels(cmd, dataModelCreator, params.module);
     }
 }

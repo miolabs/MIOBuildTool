@@ -31,6 +31,7 @@ program
   .description("manage datamodel, create new or generate typescript classes.\n")
   .option("-i, --init", "Initialize the datamodel file with example data.")
   .option("-n, --filename", "create datamodel with custom filename. default: 'datamodel.xml'")
+  .option("-m, --module", "generate classes for ES6 modules")
   .action((cmd) => {
     Data(cmd);
   });

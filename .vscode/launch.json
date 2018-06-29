@@ -14,7 +14,8 @@
         ],
         "sourceMaps": true,
         "args": [
-            "data"
+            "data", "--module"
+            // "data"
             // "build"
             // "data", "--init",
             // "create", "view", "helloView"
