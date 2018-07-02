@@ -10,7 +10,8 @@ Generate the typescript data classes of the project from the datamodel xml file.
 
 * `-i, --init` - Initialize the datamodel.xml with example data.
 * `-n, --filename` - create datamodel with custom filename. default: `datamodel.xml`
+* `-m, --module` - generate the model entities for ES6 imports
 
-## Planned features
+<!-- ## Planned features
 
-* Update the config file on initialization
+* Update the config file on initialization -->

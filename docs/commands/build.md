@@ -15,7 +15,7 @@ None
 1. Copies the `miojslibs` libs js files to `app/libs/miojslibs` folder,
    if it is available.
 
-## Planned features
+<!-- ## Planned features
 
 * scss transpilation for web projects
-* --watch option for incremental builds.
+* --watch option for incremental builds. -->

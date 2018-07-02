@@ -2,7 +2,7 @@
 
 *Not yet implemented.*
 
-## Planned features
+<!-- ## Planned features
 
 * run minimal express server
-* --port to set portnumber, load default from config file.
+* --port to set portnumber, load default from config file. -->

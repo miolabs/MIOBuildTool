@@ -2,6 +2,6 @@
 
 *Not yet implemented.*
 
-## Planned features
+<!-- ## Planned features
 
-* pack the files, add version.
+* pack the files, add version. -->

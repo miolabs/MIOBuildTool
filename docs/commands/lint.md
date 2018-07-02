@@ -2,7 +2,7 @@
 
 *Not yet implemented.*
 
-## Planned features
+<!-- ## Planned features
 
 * use `htmlhint`, `csslint`, `tslint`
-* --init generate the default lint configs
+* --init generate the default lint configs -->

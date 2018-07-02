@@ -2,8 +2,8 @@
 
 *Not yet implemented.*
 
-## Planned features
+<!-- ## Planned features
 
 * combine the others:
   * run watched build
-  * watch the filesystem for changes, run linters on save
+  * watch the filesystem for changes, run linters on save -->
