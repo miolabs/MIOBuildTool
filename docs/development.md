@@ -15,6 +15,7 @@ You can link your repository as if it was installed globally, with [npm-link](ht
 
 ```bash
 npm link
+# test it with:
 miojs new -h
 ```
 
@@ -32,6 +33,8 @@ To publish your first version to npm run:
 
 ```bash
 npm run prod
+# update changelog
+npm version major|minor|patch
 npm publish
 ```
 
