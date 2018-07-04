@@ -54,4 +54,8 @@ export class ModelEntityReference extends ModelEntity {
       "",
     ];
   }
+
+  protected formatBarrel(entityFileNames) {
+    return entityFileNames.map((name) => `/// <reference path="${name}.ts" />`).join(EOL);
+  }
 }

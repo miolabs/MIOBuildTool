@@ -57,4 +57,8 @@ export class ModelEntityModule extends ModelEntity {
       "",
     ];
   }
+
+  protected formatBarrel(entityFileNames) {
+    return entityFileNames.map((name) => `export * from "./${name}";`).join(EOL);
+  }
 }

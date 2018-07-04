@@ -6,6 +6,15 @@ import { EOL } from "os";
 export abstract class ModelEntity {
   constructor(protected entity: any) {}
 
+  public generateBarrel(entities: any) {
+    const entityFilenames = entities.map((elem) => elem.$.name);
+    const fileContent = this.formatBarrel(entityFilenames) + EOL;
+    const modelPath = projectConfig.datamodelFolder;
+    const resultPath = path.join(modelPath, "index.ts");
+    const writeSubclass = fs.writeFile(resultPath, fileContent);
+    return Promise.all([writeSubclass]);
+  }
+
   public parseEntity() {
     const attrs: {[k in string]: string} = this.entity.$;
     const attributes: {[k in string]: string} = this.entity.attribute;
@@ -39,6 +48,8 @@ export abstract class ModelEntity {
   protected abstract createEmptyEntity(exists, classname, currentClassEntityName, subclassFilePath);
   protected abstract openModelEntity(currentClassEntityName, parentName);
   protected abstract closeModelEntity();
+
+  protected abstract formatBarrel(entities): string;
 
   protected parseAttributes(attributes) {
     let append = [];

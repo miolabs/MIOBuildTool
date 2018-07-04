@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.5] - 2018-07-04
+
+### Added
+
+* Add barrel export for all generated models.
+
 ## [1.1.4] - 2018-07-02
 
 ### Added
@@ -70,7 +76,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Mioconfig file search.
 * Build command
 
-[Unreleased]: https://github.com/miolabs/MIOBuildTool/compare/v1.1.4...HEAD
+[Unreleased]: https://github.com/miolabs/MIOBuildTool/compare/v1.1.5...HEAD
+[1.1.4]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.4...v1.1.5
 [1.1.4]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.3...v1.1.4
 [1.1.3]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.2...v1.1.3
 [1.1.2]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.1...v1.1.2

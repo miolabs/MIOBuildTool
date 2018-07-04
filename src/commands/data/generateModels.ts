@@ -21,6 +21,7 @@ export function generateModels(cmd, dataModelFile: CopyHandler, generateModules:
       for (const entity of entities) {
         generatedFiles.push(generateEntityFile(entity, generateModules));
       }
+      generatedFiles.push(generateBarrelFile(entities, generateModules));
       return Promise.all(generatedFiles);
     })
     .then(() => {
@@ -52,4 +53,9 @@ function generateEntityFile(entity: any, generateModules: boolean) {
   // TODO: connect differentiation
   const modelEntity = modelEntityFactory(entity, generateModules);
   return modelEntity.parseEntity();
+}
+
+function generateBarrelFile(entities, generateModules: boolean) {
+  const modelEntity = modelEntityFactory({}, generateModules);
+  return modelEntity.generateBarrel(entities);
 }
