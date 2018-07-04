@@ -32,7 +32,7 @@ export class ModelEntityModule extends ModelEntity {
     }
   }
 
-  protected openModelEntity(cn: string, parentName: string) {
+  protected openModelEntity(cn: string, parentName: string, relationshipNames: string[]) {
     const parentObject = parentName || "MIOManagedObject";
     let referenceParent = "";
     if (parentName) {
@@ -41,8 +41,11 @@ export class ModelEntityModule extends ModelEntity {
       referenceParent = `import { MIOManagedObject } from "${projectConfig.libsName}";`;
     }
 
+    const importRelationships = relationshipNames.map((name) => `import { ${name} } from "./${name}";`);
+
     const appendableContent = [
       referenceParent,
+      ...importRelationships,
       "",
       `// Generated class ${cn}`,
       "",

@@ -17,16 +17,24 @@ export abstract class ModelEntity {
 
   public parseEntity() {
     const attrs: {[k in string]: string} = this.entity.$;
-    const attributes: {[k in string]: string} = this.entity.attribute;
-    const relationships: {[k in string]: string} = this.entity.relationship;
+    const attributes: any[] = this.entity.attribute;
+    const relationships: any[] = this.entity.relationship;
 
     const filename = `${attrs.name}_ManagedObject.ts`;
     const classname = attrs.representedClassName;
     const currentClassEntityName = classname + "_ManagedObject";
     const parentName = attrs.parentEntity;
 
+    let relationshipNames = [];
+    if (relationships) {
+      relationshipNames = relationships
+        .map((rel) => rel.$.destinationEntity)
+        .sort()
+        .filter((item, pos, ary) => !pos || item !== ary[pos - 1]);
+    }
+
     const fileContent = [
-      ...this.openModelEntity(currentClassEntityName, parentName),
+      ...this.openModelEntity(currentClassEntityName, parentName, relationshipNames),
       ...this.parseAttributes(attributes),
       ...this.parseRelationships(relationships),
       ...this.closeModelEntity(),
@@ -46,7 +54,7 @@ export abstract class ModelEntity {
   }
 
   protected abstract createEmptyEntity(exists, classname, currentClassEntityName, subclassFilePath);
-  protected abstract openModelEntity(currentClassEntityName, parentName);
+  protected abstract openModelEntity(currentClassEntityName: string, parentName: string, relationshipNames: string[]);
   protected abstract closeModelEntity();
 
   protected abstract formatBarrel(entities): string;

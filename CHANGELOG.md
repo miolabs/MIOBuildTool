@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 * Add barrel export for all generated models.
+* Add relationship imports for module generation.
 
 ## [1.1.4] - 2018-07-02
 
