@@ -33,7 +33,7 @@ export class ModelEntityReference extends ModelEntity {
     }
   }
 
-  protected openModelEntity(cn: string, parentName: string, relationshipNames: string[]) {
+  protected openModelEntity(cn: string, parentName: string, relationshipNames: string[], libdependencies: string[]) {
     const parentObject = parentName || "MIOManagedObject";
     const referenceParent = (parentName) ? `${EOL}/// <reference path="${parentName}.ts" />${EOL}` : "";
 

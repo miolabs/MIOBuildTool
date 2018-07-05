@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * Add barrel export for all generated models.
 * Add relationship imports for module generation.
+* Add other imports from miojslibs-core
 
 ## [1.1.4] - 2018-07-02
 

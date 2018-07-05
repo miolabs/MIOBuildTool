@@ -2,6 +2,7 @@ import * as fs from "fs-extra";
 import * as path from "path";
 import { projectConfig } from "../../defaults/projectDefaults";
 import { EOL } from "os";
+import { consts } from "./consts";
 
 export abstract class ModelEntity {
   constructor(protected entity: any) {}
@@ -26,15 +27,19 @@ export abstract class ModelEntity {
     const parentName = attrs.parentEntity;
 
     let relationshipNames = [];
+    const libDependencies = [];
     if (relationships) {
       relationshipNames = relationships
         .map((rel) => rel.$.destinationEntity)
         .sort()
         .filter((item, pos, ary) => !pos || item !== ary[pos - 1]);
+      if (relationships.some((rel) => rel.$.toMany !== "NO")) {
+        libDependencies.push(consts.CLASS_TOMANY);
+      }
     }
 
     const fileContent = [
-      ...this.openModelEntity(currentClassEntityName, parentName, relationshipNames),
+      ...this.openModelEntity(currentClassEntityName, parentName, relationshipNames, libDependencies),
       ...this.parseAttributes(attributes),
       ...this.parseRelationships(relationships),
       ...this.closeModelEntity(),
@@ -54,7 +59,9 @@ export abstract class ModelEntity {
   }
 
   protected abstract createEmptyEntity(exists, classname, currentClassEntityName, subclassFilePath);
-  protected abstract openModelEntity(currentClassEntityName: string, parentName: string, relationshipNames: string[]);
+  protected abstract openModelEntity(
+    currentClassEntityName: string, parentName: string,
+    relationshipNames: string[], libDependencies: string[]);
   protected abstract closeModelEntity();
 
   protected abstract formatBarrel(entities): string;
@@ -190,9 +197,9 @@ export abstract class ModelEntity {
           ``,
           `    // Relationship: ${name}`,
           // Var
-          `    protected _${name}:MIOManagedObjectSet = null;`,
+          `    protected _${name}:${consts.CLASS_TOMANY} = null;`,
           // Getter
-          `    get ${name}():MIOManagedObjectSet {`,
+          `    get ${name}():${consts.CLASS_TOMANY} {`,
           `        return this.valueForKey('${name}');`,
           `    }`,
           // Add
