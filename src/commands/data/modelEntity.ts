@@ -5,12 +5,12 @@ import { EOL } from "os";
 import { consts } from "./consts";
 
 export abstract class ModelEntity {
-  constructor(protected entity: any) {}
+  constructor(protected entity: any, protected params: any) {}
 
   public generateBarrel(entities: any) {
     const entityFilenames = entities.map((elem) => elem.$.name);
     const fileContent = this.formatBarrel(entityFilenames) + EOL;
-    const modelPath = projectConfig.datamodelFolder;
+    const modelPath = this.params.targetdir ? this.params.targetdir : projectConfig.datamodelFolder;
     const resultPath = path.join(modelPath, "index.ts");
     const writeSubclass = fs.writeFile(resultPath, fileContent);
     return Promise.all([writeSubclass]);
@@ -45,7 +45,7 @@ export abstract class ModelEntity {
       ...this.closeModelEntity(),
     ];
 
-    const modelPath = projectConfig.datamodelFolder;
+    const modelPath = this.params.targetdir ? this.params.targetdir : projectConfig.datamodelFolder;
     const resultPath = path.join(modelPath, filename);
 
     const writeFiles = [fs.writeFile(resultPath, fileContent.join(EOL))];

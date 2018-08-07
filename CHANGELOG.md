@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [1.1.6] - 2018-07-04
+
+### Added
+
+* New parameter to change the target directory.
+
+### Fixed
+
+* Source filename parameter name did not work, changed its name also to sourcepath.
+
 ## [1.1.5] - 2018-07-04
 
 ### Added
@@ -78,8 +88,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 * Mioconfig file search.
 * Build command
 
-[Unreleased]: https://github.com/miolabs/MIOBuildTool/compare/v1.1.5...HEAD
-[1.1.4]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.4...v1.1.5
+[Unreleased]: https://github.com/miolabs/MIOBuildTool/compare/v1.1.6...HEAD
+[1.1.6]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.5...v1.1.6
+[1.1.5]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.4...v1.1.5
 [1.1.4]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.3...v1.1.4
 [1.1.3]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.2...v1.1.3
 [1.1.2]:  https://github.com/miolabs/MIOBuildTool/compare/v1.1.1...v1.1.2

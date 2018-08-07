@@ -6,8 +6,8 @@ import { projectConfig } from "../../defaults/projectDefaults";
 
 export class ModelEntityModule extends ModelEntity {
 
-  constructor(entity: any) {
-    super(entity);
+  constructor(entity: any, params: any) {
+    super(entity, params);
   }
 
   protected createEmptyEntity(exists, classname, currentClassEntityName, subclassFilePath) {

@@ -5,7 +5,7 @@ import { CopyHandler } from "../../utils/copyHandler";
 import { ErrorMessage } from "../../utils/error";
 import { modelEntityFactory } from "./modelEntityFactory";
 
-export function generateModels(cmd, dataModelFile: CopyHandler, generateModules: boolean) {
+export function generateModels(cmd, dataModelFile: CopyHandler, params: any) {
   return dataModelFile.checkExistence()
     .then((pathExists: boolean) => {
       if (pathExists) {
@@ -19,9 +19,9 @@ export function generateModels(cmd, dataModelFile: CopyHandler, generateModules:
       const configuration = xmlData.model.entity;
       const generatedFiles: Array <Promise<void[]>> = [];
       for (const entity of entities) {
-        generatedFiles.push(generateEntityFile(entity, generateModules));
+        generatedFiles.push(generateEntityFile(entity, params));
       }
-      generatedFiles.push(generateBarrelFile(entities, generateModules));
+      generatedFiles.push(generateBarrelFile(entities, params));
       return Promise.all(generatedFiles);
     })
     .then(() => {
@@ -49,13 +49,13 @@ function parseDataModel(filePath): Promise<string> {
         });
 }
 
-function generateEntityFile(entity: any, generateModules: boolean) {
+function generateEntityFile(entity: any, params: boolean) {
   // TODO: connect differentiation
-  const modelEntity = modelEntityFactory(entity, generateModules);
+  const modelEntity = modelEntityFactory(entity, params);
   return modelEntity.parseEntity();
 }
 
-function generateBarrelFile(entities, generateModules: boolean) {
-  const modelEntity = modelEntityFactory({}, generateModules);
+function generateBarrelFile(entities, params: boolean) {
+  const modelEntity = modelEntityFactory({}, params);
   return modelEntity.generateBarrel(entities);
 }

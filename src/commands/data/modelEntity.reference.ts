@@ -5,8 +5,8 @@ import * as fs from "fs-extra";
 
 export class ModelEntityReference extends ModelEntity {
 
-  constructor(entity: any) {
-    super(entity);
+  constructor(entity: any, params: any) {
+    super(entity, params);
   }
 
   protected createEmptyEntity(exists, classname, currentClassEntityName, subclassFilePath) {
